@@ -1,4 +1,4 @@
-# 🧠💥 DeepDoom: Reinforcement Learning with ViZDoom
+# DeepDoom: Reinforcement Learning with ViZDoom
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12.4-blue?logo=python">
