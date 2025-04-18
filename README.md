@@ -107,7 +107,27 @@ A simple Flask web interface allows you to:
 
 ### 🌲 Folder Structure
 
-DeepDoom/ │ ├── main/ │ ├── app.py │ ├── basic_env.py │ ├── basic_hardcode.py │ ├── defend_env.py │ ├── deadly_env.py │ ├── models/ # Trained agents │ ├── templates/ │ │ └── index.html # UI Page │ └── static/ │ └── style.css # Web styles │ ├── deep_doom.ipynb # Training Notebook ├── requirements.txt └── README.md
+DeepDoom/
+├── main/
+│   ├── app.py
+│   ├── basic_env.py
+│   ├── basic_hardcode.py
+│   ├── defend_env.py
+│   ├── deadly_env.py
+│   ├── models/
+│   │   ├── basic_ppo_1.zip
+│   │   ├── deadly_ppo_1.zip
+│   │   ├── defend_ppo_1.zip
+│   │   ├── basic_dqn.zip
+│   │   ├── basic_a2c.zip
+│   │   └── ppo_vizdoom_best.ppt
+│   ├── templates/
+│   │   └── index.html
+│   └── static/
+│       └── style.css
+├── deep_doom.ipynb
+├── requirements.txt
+└── README.md
 
 yaml
 Copy
