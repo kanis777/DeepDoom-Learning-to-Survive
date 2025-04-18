@@ -105,8 +105,8 @@ A simple Flask web interface allows you to:
 - Visualize how each model works after the training 
 - Interact with agents in real time
 
-### 🌲 Folder Structure
-
+### 🌲 Repo Structure
+```bash
 DeepDoom/
 ├── main/
 │   ├── app.py
@@ -128,7 +128,7 @@ DeepDoom/
 ├── deep_doom.ipynb
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## 🛠️ How to Run
@@ -136,18 +136,20 @@ DeepDoom/
 1. **Clone the repo**  
    ```bash
    git clone https://github.com/your-username/DeepDoom.git
-   cd DeepDoom```
+   cd DeepDoom
+   ```
 2. **Install dependencies**
 
 ```bash
-pip install -r requirements.txt```
-
+pip install -r requirements.txt
+```
 3. **Launch Flask App**
 
 ```bash
 cd main
 python app.py```
-
+```
 4. **Explore Notebooks**
 
 deep_doom.ipynb contains training logic and visualization.
+```
