@@ -152,4 +152,21 @@ python app.py```
 4. **Explore Notebooks**
 
 deep_doom.ipynb contains training logic and visualization.
+
+## 📚 Acknowledgements
+
+**Marek Wydmuch, Michał Kempka & Wojciech Jaśkowski, "ViZDoom Competitions: Playing Doom from Pixels," IEEE Transactions on Games, vol. 11, no. 3, pp. 248-259, 2019 (arXiv:1809.03470)**
+
+```bibtex
+@article{Wydmuch2019ViZdoom,
+  author  = {Marek Wydmuch and Micha{\l} Kempka and Wojciech Ja\'skowski},
+  title   = {{ViZDoom} {C}ompetitions: {P}laying {D}oom from {P}ixels},
+  journal = {IEEE Transactions on Games},
+  year    = {2019},
+  volume  = {11},
+  number  = {3},
+  pages   = {248--259},
+  doi     = {10.1109/TG.2018.2877047},
+  note    = {The 2022 IEEE Transactions on Games Outstanding Paper Award}
+}
 ```
