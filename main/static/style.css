@@ -1,0 +1,89 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 30px;
+    color: #66ffcc;
+    font-size: 32px;
+}
+
+.card {
+    background-color: #1e1e1e;
+    border-radius: 15px;
+    padding: 30px;
+    width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(102, 255, 204, 0.3);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #2a2a2a;
+    border: 1px solid #66ffcc;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 25px;
+    background: #66ffcc;
+    border: none;
+    color: #111;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #55e6b7;
+}
+
+.stop-btn {
+    background: #ff4d4d;
+    color: #fff;
+    margin-top: 10px;
+    padding: 12px 25px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.stop-btn:hover {
+    background: #e63946;
+}
+
+.result-box {
+    background-color: #222;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    color: #ffcc66;
+    text-align: left;
+}
+
+.result-box h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
