@@ -129,10 +129,6 @@ DeepDoom/
 ├── requirements.txt
 └── README.md
 
-yaml
-Copy
-Edit
-
 ---
 
 ## 🛠️ How to Run
@@ -140,20 +136,18 @@ Edit
 1. **Clone the repo**  
    ```bash
    git clone https://github.com/your-username/DeepDoom.git
-   cd DeepDoom
-Install dependencies
+   cd DeepDoom```
+2. **Install dependencies**
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Launch Flask App
+```bash
+pip install -r requirements.txt```
 
-bash
-Copy
-Edit
+3. **Launch Flask App**
+
+```bash
 cd main
-python app.py
-Explore Notebooks
+python app.py```
+
+4. **Explore Notebooks**
 
 deep_doom.ipynb contains training logic and visualization.
