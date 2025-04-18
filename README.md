@@ -6,7 +6,6 @@
   <img src="https://img.shields.io/badge/Gym-0.26.2-brightgreen?logo=openai">
   <img src="https://img.shields.io/badge/Stable--Baselines3-2.2.1-blueviolet?logo=github">
   <img src="https://img.shields.io/badge/ViZDoom-1.2.0-lightgrey?logo=doom">
-  <img src="https://img.shields.io/badge/WandB-Logging-yellow?logo=weightsandbiases">
 </p>
 
 ## 🎯 Project Overview
