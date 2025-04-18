@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ViZDoom Agent Evaluator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>ViZDoom Agent Evaluation</h1>
+
+    <div class="card">
+        <form method="POST">
+            <label for="scenario">Choose Scenario:</label>
+            <select name="scenario" id="scenario" onchange="toggleAgentDropdown()" required>
+                <option value="">--Select Scenario--</option>
+                <option value="basic">Basic</option>
+                <option value="defend">Defend Center</option>
+                <option value="deadly">Deadly Corridor</option>
+            </select>
+
+            <div id="agentSection" style="display: none;">
+                <label for="agent">Choose Agent:</label>
+                <select name="agent" id="agent">
+                    <option value="">--Select Agent--</option>
+                    <option value="ppo">PPO</option>
+                    <option value="a2c">A2C</option>
+                    <option value="dqn">DQN</option>
+                    <option value="hardcoded_ppo">Hardcoded PPO</option>
+                </select>
+            </div>
+
+            <button type="submit">Run Evaluation</button>
+        </form>
+        <!-- Stop Button Form -->
+        <form method="POST" action="/stop" style="margin-top: 10px;">
+            <button type="submit" style="background-color: red; color: white;">Stop Evaluation</button>
+        </form>
+        {% if result %}
+            <div class="result-box">
+                <h2>Evaluation Results</h2>
+                <p><strong>Mean Reward:</strong> {{ result[0] }}</p>
+                <p><strong>Episode Rewards:</strong> {{ result[1] }}</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleAgentDropdown() {
+            var scenario = document.getElementById("scenario").value;
+            var agentSection = document.getElementById("agentSection");
+    
+            // Show agent dropdown for all scenarios that need agent selection
+            if (scenario === "basic" || scenario === "defend" || scenario === "deadly") {
+                agentSection.style.display = "block";
+                document.getElementById("agent").required = true;
+            } else {
+                agentSection.style.display = "none";
+                document.getElementById("agent").required = false;
+            }
+        }    
+    </script>
+</body>
+</html>
