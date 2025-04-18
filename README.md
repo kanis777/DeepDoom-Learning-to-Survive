@@ -134,7 +134,7 @@ DeepDoom/
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/your-username/DeepDoom.git
+   git clone https://github.com/kanis777/DeepDoom.git
    cd DeepDoom
    ```
 2. **Install dependencies**
