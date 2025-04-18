@@ -140,18 +140,18 @@ DeepDoom/
    ```
 2. **Install dependencies**
 
-```bash
-pip install -r requirements.txt
-```
+  ```bash
+  pip install -r requirements.txt
+  ```
 3. **Launch Flask App**
 
-```bash
-cd main
-python app.py```
-```
+  ```bash
+  cd main
+  python app.py
+  ```
 4. **Explore Notebooks**
 
-deep_doom.ipynb contains training logic and visualization.
+    deep_doom.ipynb contains training logic and visualization.
 
 ## 📚 Acknowledgements
 
