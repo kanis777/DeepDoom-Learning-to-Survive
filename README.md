@@ -31,35 +31,59 @@ The goal is to teach agents how to navigate, aim, survive, and eliminate enemies
 
 ## 🗺️ Scenarios Implemented
 
-### `basic.cfg`
-The purpose of the scenario is just to check if using this framework to train some Al in a 3D environment is feasible. 
-Map is a rectangle with gray walls, ceiling and floor. Player is spawned along the longer wall, in the center. A red, circular monster is spawned randomly somewhere along the opposite wall. Player can only (config) go left/right and shoot. 1 hit is enough to kill the monster. Episode finishes when monster is killed or on timeout. 
-REWARDS: 
-+101 for killing the monster -5 for missing Episode ends after killing the monster or on timeout. 
-Further configuration: 
-living reward = -1, 
-3 available buttons: move left, move right, shoot (attack) 
-timeout = 300
+## 🧠 Problem Statements / Scenarios
 
-### `defend_the_center.cfg`
-The purpose of this scenario is to teach the agent that killing the monsters is GOOD and when monsters kill you is BAD. In addition, wasting amunition is not very good either. Agent is rewarded only for killing monsters so he has to figure out the rest for himself. 
-Map is a large circle. Player is spawned in the exact center. 5 melee-only, monsters are spawned along the wall. Monsters are killed after a single shot. After dying each monster is respawned after some time. Episode ends when the player dies (it's inevitable becuse of limitted ammo). 
-REWARDS: +1 for killing a monster 
-Further configuration: 
-3 available buttons: turn left, turn right, shoot (attack) 
-death penalty = 1
+### 🟩 `basic.cfg`
+> The purpose of the scenario is just to check if using this framework to train some AI in a 3D environment is feasible.  
+> Map is a rectangle with gray walls, ceiling and floor. The player is spawned along the longer wall, in the center. A red, circular monster is spawned randomly somewhere along the opposite wall.  
+> Player can only move left, move right, or shoot. One hit is enough to kill the monster. The episode finishes when the monster is killed or times out.
 
-### `deadly_corridor.cfg` (Curriculum Learning)
-The purpose of this scenario is to teach the agent to navigate towards his fundamental goal (the vest) and make sure he survives at the same time. 
-Map is a corridor with shooting monsters on both sides (6 monsters in total). A green vest is placed at the oposite end of the corridor. Reward is proportional (negative or positive) to change of the distance between the player and the vest. If player ignores monsters on the sides and runs straight for the vest he will be killed somewhere along the way. To ensure this behavior doom_skill = 5 (config) is needed. 
-REWARDS: 
-+dX for getting closer to the vest. -dX for getting further from the vest. 
-Further configuration: 
-5 available buttons: turn left, turn right, move left, move right, shoot (attack) 
-timeout = 4200 
-death penalty = 100 
-doom_skill = 5
-- Curriculum: Trained in stages from `s1` to `s5` with increasing difficulty
+- **Rewards:**
+  - 🟥 +101 for killing the monster  
+  - ❌ -5 for missing a shot  
+  - ⏳ Living reward = -1 per step  
+- **Buttons:** Move Left, Move Right, Shoot (3 actions)  
+- **Timeout:** 300 steps
+
+---
+
+### 🟨 `defend_the_center.cfg`
+> The purpose of this scenario is to teach the agent that killing monsters is GOOD, and getting killed by monsters is BAD.  
+> Wasting ammunition is also discouraged.  
+> The agent is only rewarded for killing monsters — it must learn to survive and manage its ammo.  
+> The player is spawned at the center of a circular map, surrounded by melee-only monsters that respawn after death.  
+> The episode ends when the player dies (inevitable due to limited ammo).
+
+- **Rewards:**
+  - 🔫 +1 for killing a monster  
+  - 💀 Death penalty = -1  
+- **Buttons:** Turn Left, Turn Right, Shoot (3 actions)
+
+---
+
+### 🟥 `deadly_corridor.cfg` (⚠️ Curriculum Learning)
+> The purpose of this scenario is to teach the agent to **navigate toward its goal (a green vest)** while surviving.  
+> The map is a corridor filled with **6 shooting monsters**.  
+> The player is rewarded for getting closer to the vest and penalized for going backward.  
+> If the player ignores monsters and charges ahead, it will likely be killed before reaching the goal.  
+> To make survival necessary, the difficulty level is set using `doom_skill = 5`.
+
+- **Rewards:**
+  - ➕ +dX for getting closer to the vest  
+  - ➖ -dX for moving away from the vest  
+  - 💀 Death penalty = -100  
+- **Buttons:** Turn Left, Turn Right, Move Left, Move Right, Shoot (5 actions)  
+- **Timeout:** 4200 steps  
+- **Difficulty:** `doom_skill = 5`
+
+#### 📈 Curriculum Learning Strategy:
+Trained in **5 stages** using:
+- `deadly_corridor_s1.cfg`
+- `deadly_corridor_s2.cfg`
+- `deadly_corridor_s3.cfg`
+- `deadly_corridor_s4.cfg`
+- `deadly_corridor_s5.cfg`  
+Each level increases difficulty. Training continues from one stage’s model to the next with total **200,000 steps**.
 
 ---
 
